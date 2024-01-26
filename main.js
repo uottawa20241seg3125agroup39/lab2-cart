@@ -14,10 +14,8 @@ function loadProducts(category)
         if (category==="normal"||product.category===category)
         {
             element.append(
-                `
-            <input type="checkbox" id="${product.id}" name="${product.name}" value="${product.name}">
-            <label for="${product.id}">${product.name}</label><br>
-            `
+                `<input type="checkbox" id="${product.id}" name="${product.name}" value="${product.name}">
+            <label for="${product.id}">${product.name}</label><br>`
             )
         }
 
@@ -29,7 +27,7 @@ function loadProducts(category)
 function updateProductEmpty()
 {
     const element=$('#product-selection')
-    if (element.children.length>0)
+    if (element.children().length>0)
     {
         $('#select-submission').show();
         $('#empty-sign').hide();
@@ -65,6 +63,7 @@ function changePreferenceType(event)
     $('#product-selection').empty();
     $('#cart-selection').empty();
     loadProducts(event.target.value);
+    updateCartEmpty();
 }
 
 function addProduct()
@@ -75,10 +74,8 @@ function addProduct()
         if (this.checked)
         {
             cart.append(
-                `
-                <input type="checkbox" id="${this.id}" name="${this.name}" value="${this.value}">
-                <label for="${this.id}">${this.name}</label><br>
-                `
+                `<input type="checkbox" id="${this.id}" name="${this.name}" value="${this.value}">
+                <label for="${this.id}">${this.name}</label><br>`
             )
             var label=element.find('label[for="'+this.id+'"]');
             label.next("br").remove();
@@ -97,10 +94,8 @@ function removeProduct(){
         if (this.checked)
         {
             product.append(
-                `
-                <input type="checkbox" id="${this.id}" name="${this.name}" value="${this.value}">
-                <label for="${this.id}">${this.name}</label><br>
-                `
+                `<input type="checkbox" id="${this.id}" name="${this.name}" value="${this.value}">
+                <label for="${this.id}">${this.name}</label><br>`
             )
             var label=element.find('label[for="'+this.id+'"]');
             label.next("br").remove();
