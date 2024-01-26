@@ -25,7 +25,7 @@ function loadProducts()
 function updateProductEmpty()
 {
     const element=$('#product-selection')
-    if (element.children.length>1)
+    if (element.children.length>0)
     {
         $('#select-submission').show();
         $('#empty-sign').hide();
@@ -46,7 +46,7 @@ window.onload = function() {
 }
 function updateCartEmpty() {
     const element = $('#cart');
-    if (element.children().length > 1) {
+    if (element.children().length > 0) {
         $('#cart-submission').show();
         $('#cart-empty-sign').hide();
         console.log("Cart is not empty");
