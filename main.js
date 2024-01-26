@@ -15,8 +15,8 @@ function loadProducts(category)
         {
             element.append(
                 `
-            <input type="checkbox" id="product-select-${product.id}" name="${product.name}" value="${product.name}">
-            <label for="product-select-${product.id}">${product.name}</label><br>
+            <input type="checkbox" id="${product.id}" name="${product.name}" value="${product.name}">
+            <label for="${product.id}">${product.name}</label><br>
             `
             )
         }
@@ -76,11 +76,11 @@ function addProduct()
         {
             cart.append(
                 `
-                <input type="checkbox" id="cart-select-${this.id}" name="${this.name}" value="${this.value}">
-                <label for="cart-select-${this.id}">${this.name}</label><br>
+                <input type="checkbox" id="${this.id}" name="${this.name}" value="${this.value}">
+                <label for="${this.id}">${this.name}</label><br>
                 `
             )
-            $('label[for="product-select-'+this.id+'"]').remove();
+            element.find('label[for="'+this.id+'"]').remove();
             this.remove();
         }
     })
@@ -96,11 +96,11 @@ function removeProduct(){
         {
             product.append(
                 `
-                <input type="checkbox" id="product-select-${this.id}" name="${this.name}" value="${this.value}">
-                <label for="product-select-${this.id}">${this.name}</label><br>
+                <input type="checkbox" id="${this.id}" name="${this.name}" value="${this.value}">
+                <label for="${this.id}">${this.name}</label><br>
                 `
             )
-            $('label[for="cart-select-'+this.id+'"]').remove();
+            element.find('label[for="'+this.id+'"]').remove();
             this.remove();
         }
     })
