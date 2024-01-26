@@ -66,3 +66,45 @@ function changePreferenceType(event)
     $('#cart-selection').empty();
     loadProducts(event.target.value);
 }
+
+function addProduct()
+{
+    const element=$('#product-selection');
+    const cart=$('#cart-selection');
+    element.children().each(function () {
+        if (this.checked)
+        {
+            cart.append(
+                `
+                <input type="checkbox" id="cart-select-${this.id}" name="${this.name}" value="${this.value}">
+                <label for="cart-select-${this.id}">${this.name}</label><br>
+                `
+            )
+            $('label[for="product-select-'+this.id+'"]').remove();
+            this.remove();
+        }
+    })
+    updateCartEmpty();
+    updateProductEmpty();
+    console.log("products added to cart");
+}
+function removeProduct(){
+    const element=$('#cart-selection');
+    const product=$('#product-selection');
+    element.children().each(function () {
+        if (this.checked)
+        {
+            product.append(
+                `
+                <input type="checkbox" id="product-select-${this.id}" name="${this.name}" value="${this.value}">
+                <label for="product-select-${this.id}">${this.name}</label><br>
+                `
+            )
+            $('label[for="cart-select-'+this.id+'"]').remove();
+            this.remove();
+        }
+    })
+    updateCartEmpty();
+    updateProductEmpty();
+    console.log("products removed from cart");
+}
