@@ -5,6 +5,7 @@
     <title>Wall Mart Official Site</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="products.js"></script>
     <script src="main.js"></script>
 </head>
 <body>
@@ -21,7 +22,7 @@
         <h1>Loading.... You must enable JavaScript or use non-IE to continue</h1>
     </div>
 
-    <div id="user" class="section">
+    <div id="user" class="section" hidden="hidden">
         <h2>Start Shopping</h2>
         <p>Choose your type and go to Products</p>
         <select id="userType" onchange="changeType(event)">
@@ -31,7 +32,7 @@
         </select>
     </div>
 
-<div id="products" class="section">
+<div id="products" class="section" hidden="hidden">
     <h2>Products</h2>
     <h3 id="empty-sign">Empty</h3>
     <form id="product-selection">
@@ -39,7 +40,7 @@
     </form>
 </div>
 
-<div id="cart" class="section">
+<div id="cart" class="section" hidden="hidden">
     <h2>Cart</h2>
     <h3 id="empty-sign-cart">Empty</h3>
     <form id="cart-selection">
