@@ -12,10 +12,10 @@
         <h1>Wall✨Mart Online Grocery</h1>
     </header>
 
-    <div id="tab">
-        <button onclick="loadpage(event, 'user')">Start Shopping</button>
-        <button onclick="loadPage(event, 'products')">Products</button>
-        <button onclick="loadPage(event, 'cart')">Cart</button>
+    <div id="tab" class="tab">
+        <button onclick="loadpage(event, 'user')" class="not-selected">Start Shopping</button>
+        <button onclick="loadPage(event, 'products')" class="not-selected">Products</button>
+        <button onclick="loadPage(event, 'cart')" class="not-selected">Cart</button>
     </div>
     <div id="loading">
         <h1>Loading.... You must enable JavaScript or use non-IE to continue</h1>
@@ -24,12 +24,20 @@
     <div id="user" class="section">
         <h2>Start Shopping</h2>
         <p>Choose your type and go to Products</p>
-        <select id="userType">
+        <select id="userType" onchange="changeType(event)">
             <option value="normal" selected>Normal</option>
             <option value="vegan">Vegan</option>
             <option value="glutenfree">Gluten Free</option>
         </select>
     </div>
+
+<div id="products" class="section">
+    <h2>Products</h2>
+    <h3 id="empty-sign">Empty</h3>
+    <form id="product-selection">
+        <button type="button" onclick="addProduct()" id="select-submission" hidden="hidden">Apple</button>
+    </form>
+</div>
 
 </body>
 </html>
