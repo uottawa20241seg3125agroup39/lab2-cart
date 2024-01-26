@@ -1,6 +1,11 @@
 function loadpage(event, pageName) {
-    
-    
+    const sections=$('.section');
+    sections.hide();
+    const shown=$('#'+pageName);
+    shown.show();
+    $('.selected').toggleClass('selected not-selected');
+    $('#'+pageName+'-button').toggleClass('selected not-selected');
+    console.log(`page switch to ${pageName}`);
 }
 function loadProducts()
 {
@@ -36,5 +41,18 @@ window.onload = function() {
     loadProducts();
     $('#user').show();
     $('#loading').hide();
+    $('#user-button').addClass('selected').removeClass('not-selected');
     console.log("loaded");
+}
+function updateCartEmpty() {
+    const element = $('#cart');
+    if (element.children().length > 1) {
+        $('#cart-submission').show();
+        $('#cart-empty-sign').hide();
+        console.log("Cart is not empty");
+    } else {
+        $('#cart-submission').hide();
+        $('#cart-empty-sign').show();
+        console.log("Cart is empty");
+    }
 }
