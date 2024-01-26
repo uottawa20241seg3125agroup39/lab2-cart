@@ -1,8 +1,6 @@
 function loadpage(event, pageName) {
     
-    if (pageName === 'user') {
-        document.getElementById("content").style.display = "block";
-    }
+    
 }
 function loadProducts()
 {
@@ -24,19 +22,19 @@ function updateProductEmpty()
     const element=$('#product-selection')
     if (element.children.length>1)
     {
-        $('#select-submission').hidden=false;
-        $('#empty-sign').hidden=true;
+        $('#select-submission').show();
+        $('#empty-sign').hide();
         console.log("products not empty")
     }
     else {
-        $('#select-submission').hidden=true;
-        $('#empty-sign').hidden=false;
+        $('#select-submission').hide();
+        $('#empty-sign').show();
         console.log("products empty")
     }
 }
 window.onload = function() {
     loadProducts();
-    $('#user').hidden=false;
-    $('#loading').hidden=true;
+    $('#user').show();
+    $('#loading').hide();
     console.log("loaded");
 }
