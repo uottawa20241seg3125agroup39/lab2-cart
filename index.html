@@ -25,10 +25,11 @@
     <div id="user" class="section" hidden="hidden">
         <h2>Start Shopping</h2>
         <p>Choose your type and go to Products</p>
-        <select id="userType" onchange="changeType(event)">
+        <p>Warning: Changing your preference will clear your cart!</p>
+        <select id="userType" onchange="changePreferenceType(event)">
             <option value="normal" selected>Normal</option>
             <option value="vegan">Vegan</option>
-            <option value="glutenfree">Gluten Free</option>
+            <option value="gluten-free">Gluten Free</option>
         </select>
     </div>
 

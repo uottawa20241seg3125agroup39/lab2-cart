@@ -7,19 +7,23 @@ function loadpage(event, pageName) {
     $('#'+pageName+'-button').toggleClass('selected not-selected');
     console.log(`page switch to ${pageName}`);
 }
-function loadProducts()
+function loadProducts(category)
 {
     const element=$('#product-selection')
     products.forEach(product => {
-        element.append(
-            `
+        if (category==="normal"||product.category===category)
+        {
+            element.append(
+                `
             <input type="checkbox" id="product-select-${product.id}" name="${product.name}" value="${product.name}">
             <label for="product-select-${product.id}">${product.name}</label><br>
             `
-        )
+            )
+        }
+
     })
     updateProductEmpty();
-    console.log("products loaded");
+    console.log("products loaded for "+category);
 }
 
 function updateProductEmpty()
@@ -38,7 +42,7 @@ function updateProductEmpty()
     }
 }
 window.onload = function() {
-    loadProducts();
+    loadProducts("normal");
     $('#user').show();
     $('#loading').hide();
     $('#user-button').addClass('selected').removeClass('not-selected');
@@ -55,4 +59,10 @@ function updateCartEmpty() {
         $('#cart-empty-sign').show();
         console.log("Cart is empty");
     }
+}
+function changePreferenceType(event)
+{
+    $('#product-selection').empty();
+    $('#cart-selection').empty();
+    loadProducts(event.target.value);
 }
