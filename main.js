@@ -49,7 +49,7 @@ window.onload = function() {
     console.log("loaded");
 }
 function updateCartEmpty() {
-    const element = $('#cart');
+    const element = $('#cart-selection');
     if (element.children().length > 0) {
         $('#cart-submission').show();
         $('#cart-empty-sign').hide();
@@ -80,7 +80,9 @@ function addProduct()
                 <label for="${this.id}">${this.name}</label><br>
                 `
             )
-            element.find('label[for="'+this.id+'"]').remove();
+            var label=element.find('label[for="'+this.id+'"]');
+            label.next("br").remove();
+            label.remove();
             this.remove();
         }
     })
@@ -100,7 +102,9 @@ function removeProduct(){
                 <label for="${this.id}">${this.name}</label><br>
                 `
             )
-            element.find('label[for="'+this.id+'"]').remove();
+            var label=element.find('label[for="'+this.id+'"]');
+            label.next("br").remove();
+            label.remove();
             this.remove();
         }
     })
