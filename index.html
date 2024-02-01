@@ -32,9 +32,28 @@
             <option value="gluten-free">Gluten Free</option>
         </select>
     </div>
-
+<!--new! font change feature (button)-->
 <div id="products" class="section" hidden="hidden">
+    <div class="font-change">
+        <button class="font-change-btn" onClick="toggleFontSize('products')"></button>
+    </div>
     <h2>Products</h2>
+    <hr>
+<!--    new! search bar-->
+    <div class = "search-bar">
+        <input type="text" id="search-input" placeholder="search for your ..." oninput="onSearch()">
+    </div>
+<!--new! price slider-->
+    <div class="price-slider">
+        <label for="priceRange">Price range:</label>
+        <input type="range" id="priceRange" min="0" max="100" value="50" class="slider">
+        <span id="priceRangeValue">$0 - $50</span>
+    </div>
+
+    <div id="productList" class="product-list">
+        <!-- Products will be dynamically updated based on the slider value -->
+    </div>
+
     <h3 id="empty-sign">Empty</h3>
     <form id="product-selection">
 
@@ -43,12 +62,119 @@
 </div>
 
 <div id="cart" class="section" hidden="hidden">
-    <h2>Cart</h2>
+<!--    你看看换成button好的话就换一下吧-->
+    <div class="stepper-wrapper">
+        <div class="stepper-item completed">
+            <div class="step-counter">1</div>
+            <div class="step-name">Cart</div>
+        </div>
+        <div class="stepper-item completed">
+            <div class="step-counter">2</div>
+            <div class="step-name">Payment Method</div>
+        </div>
+        <div class="stepper-item completed">
+            <div class="step-counter">3</div>
+            <div class="step-name">Shipping</div>
+        </div>
+        <div class="stepper-item">
+            <div class="step-counter">4</div>
+            <div class="step-name">Order Summary</div>
+        </div>
+    </div>
+
+
+    <!--    cart-->
     <h3 id="cart-empty-sign">Empty</h3>
     <form id="cart-selection">
 
     </form>
     <p><button type="button" onclick="removeProduct()" id="cart-submission" hidden="hidden">Remove from Cart</button></p>
+
+
+
+    <!-- new! Payment Form(hide) -->
+    <div class="form-container" style="display: none">
+        <div class="form-buttons">
+            <button type="button">Go Back</button>
+        </div>
+
+        <div class="form-field">
+            <label for="cardholder-name">Cardholder Name:</label>
+            <input type="text" id="cardholder-name" placeholder="Cardholder Name">
+        </div>
+
+        <div class="form-field">
+            <label for="card-number">Card Number:</label>
+            <input type="text" id="card-number" placeholder="XXXX XXXX XXXX XXXX">
+        </div>
+
+        <div class="form-field">
+            <label for="exp-date">Expiration Date:</label>
+            <input type="text" id="exp-date" placeholder="MM/YY">
+        </div>
+
+        <div class="form-field">
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" placeholder="CVV">
+        </div>
+
+        <div class="form-field">
+            <label for="zip-code-pay">Postal/ZIP Code:</label>
+            <input type="text" id="zip-code-pay" placeholder="Postal/ZIP">
+        </div>
+
+        <div class="form-buttons">
+            <button type="button">Next Page</button>
+        </div>
+    </div>
+
+<!--  new!  shipping form（hide）-->
+
+    <div class="form-container" style="display: none">
+        <div class="form-buttons">
+            <button type="button">Go Back</button>
+        </div>
+
+        <h2>Ship To</h2>
+
+        <div class="form-field">
+            <label for="first-name">First Name:</label>
+            <input type="text" id="first-name" placeholder="John">
+        </div>
+
+        <div class="form-field">
+            <label for="last-name">Last Name:</label>
+            <input type="text" id="last-name" placeholder="Doe">
+        </div>
+
+        <div class="form-field">
+            <label for="street">Street:</label>
+            <input type="text" id="street" placeholder="Street Name">
+        </div>
+
+        <div class="form-field">
+            <label for="city">City:</label>
+            <input type="text" id="city" placeholder="City">
+        </div>
+
+        <div class="form-field">
+            <label for="province">Province:</label>
+            <input type="text" id="province" placeholder="Province">
+        </div>
+
+        <div class="form-field">
+            <label for="zip-code-ship">ZIP Code:</label>
+            <input type="text" id="zip-code-ship" placeholder="XXX XXX">
+        </div>
+
+        <div class="form-buttons">
+            <button type="button">Next Page</button>
+        </div>
+    </div>
+
+
+
+
 </div>
 
 
