@@ -13,11 +13,11 @@
         <h1>Wall✨Mart Online Grocery</h1>
     </header>
 
-    <ul id="tab" class="tab">
-        <li><button id="user-button" onclick="loadpage(event, 'user')" class="not-selected">Start Shopping</button></li>
-        <li><button id="products-button" onclick="loadpage(event, 'products')" class="not-selected">Products</button></li>
-        <li><button id="cart-button" onclick="loadpage(event, 'cart')" class="not-selected">Cart</button></li>
-    </ul>
+    <nav id="tab" class="tab">
+        <li><button id="user-button" onclick="loadpage(event, 'user')" class="not-selected">Start Shopping      >></button></li>
+        <li><button id="products-button" onclick="loadpage(event, 'products')" class="not-selected">Products      >></button></li>
+        <li><button id="cart-button" onclick="loadpage(event, 'cart')" class="not-selected">Cart      >></button></li>
+    </nav>
 
 
     <div id="loading">
@@ -25,7 +25,7 @@
     </div>
 
     <div id="user" class="section" hidden="hidden">
-        <h2>Start Shopping</h2>
+        <h1>Before we start...</h1>
         <p>Choose your type and go to Products</p>
         <p>Warning: Changing your preference will clear your cart!</p>
         <select id="userType" onchange="changePreferenceType(event)">
@@ -35,7 +35,7 @@
         </select>
     </div>
 <!--new! font change feature (button)-->
-<div id="products" class="section" hidden="hidden">
+    <div id="products" class="section" hidden="hidden">
     <div class="font-change">
         <button class="font-change-btn" onClick="toggleFontSize('products')"></button>
     </div>
@@ -44,13 +44,15 @@
 <!--    new! search bar-->
     <div class = "search-bar">
         <input type="text" id="search-input" placeholder="search for your ..." oninput="onSearch()">
+        <button type="submit"><i class="itemSearch"></i></button>
     </div>
 <!--new! price slider-->
     <div class="price-slider">
         <div class="min-price">Min price: 0</div>
         <div class="max-price">Max price: 90</div>
         <label for="minPrice">Min price:</label>
-        <input type="range" id="minPrice" class="slider" min="0" max="100" value="10" >
+        <input type="range" id="minPrice" class="slider" min="0" max="100" value="10" oninput="rangeValue.innerText = this.value">
+        <p id="rangeValue">100</p> <!----另一种method-->
         <label for="maxPrice">Max price:</label>
         <input type="range" id="maxPrice" class="slider" min="0" max="100" value="90" >
         <span id="priceRangeValue">$10 - $90</span>
@@ -65,9 +67,9 @@
 
     </form>
     <p><button type="button" onclick="addProduct()" id="select-submission" hidden="hidden">Add to Cart</button></p>
-</div>
+    </div>
 
-<div id="cart" class="section" hidden="hidden">
+    <div id="cart" class="section" hidden="hidden">
 <!--    你看看换成button好的话就换一下吧-->
     <div class="stepper-wrapper">
         <div class="stepper-item completed">
@@ -181,8 +183,8 @@
 
 
 
-</div>
-
+    </div>
+    
 
 <footer class="signature">
     <hr>

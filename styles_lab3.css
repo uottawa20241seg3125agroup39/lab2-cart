@@ -27,6 +27,22 @@ nav button {
     cursor: pointer;
 }
 
+footer {
+    width: 100%;
+    background-color: #444;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+
+/* 其他样式不变 */
+
+#user {
+    text-align: center;
+    
+}
+
 .section {
     margin: 20px;
     padding: 20px;
@@ -34,17 +50,23 @@ nav button {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-select, input, button {
-    margin-bottom: 10px;
-    padding: 5px;
-}
 
 .font-change-btn {
     font-size: 20px;
 }
+.search-bar input[type=text] {
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 17px;
+  }
 
-.search-bar {
-    margin-bottom: 20px;
+.search-bar button {
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  cursor: pointer;
 }
 
 .price-slider {
@@ -80,12 +102,6 @@ select, input, button {
     display: none;
 }
 
-footer {
-    background-color: #444;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-}
 
 .signature {
     list-style: none;
@@ -103,9 +119,8 @@ footer {
 }
 
 .tab {
-    padding: 10px 16px;
     list-style: none;
-    background-color: #eee;
+    background-color: #ffff;
 }
 
 .tab li {
@@ -114,18 +129,7 @@ footer {
     margin-right: 10px;
 }
 
-.tab li+li:before {
-    padding: 8px;
-    color: black;
-    content: "/\00a0";
-}
-
-.tab li a {
-    color: #0275d8;
-    text-decoration: none;
-}
-
-.tab li a:hover {
+.tab :hover {
     color: #01447e;
     text-decoration: underline;
 }
@@ -144,5 +148,27 @@ footer {
     background-color: transparent !important;
     border: 1px solid transparent !important;
     color: #000 !important;
+}
+
+.price-slider {
+    display: inline-block;
+    margin-top: 20px;
+    border: 1px solid #ccc; /* 添加外框 */
+    padding: 10px; /* 添加内边距 */
+}
+
+
+.min-price,
+.max-price {
+    justify-content: space-between;
+    margin-bottom: 10px;
+    color: #333; /* 设置价格标签的颜色 */
+}
+
+#priceRangeValue {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #009688; /* 设置价格范围值的颜色 */
 }
 
