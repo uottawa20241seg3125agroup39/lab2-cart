@@ -130,30 +130,19 @@ footer {
     text-decoration: underline;
 }
 
-/* 透明按钮样式 */
+
 .transparent-button {
     background-color: transparent;
     border: 1px solid transparent;
-    color: #000; /* 设置文字颜色，以确保在透明背景上可见 */
-    cursor: pointer; /* 添加手型光标，使按钮看起来可点击 */
+    color: #000; 
+    cursor: pointer; 
 }
 
-/* 为了应用透明样式，给每个按钮添加 transparent-button 类 */
 #user-button,
 #products-button,
 #cart-button {
-    /* 如果按钮的样式已在其他地方定义，请确保这里的样式会覆盖之前的样式 */
-    /* 比如，如果之前已经定义了 background-color，border，color 等样式，这里需要进行覆盖或调整 */
     background-color: transparent !important;
     border: 1px solid transparent !important;
     color: #000 !important;
 }
 
-/* 如果需要将链接按钮也设置为透明，可以添加类似的样式 */
-.transparent-link {
-    background-color: transparent;
-    border: none;
-    color: #000; /* 设置链接文字颜色 */
-    text-decoration: underline; /* 添加下划线，使链接看起来可点击 */
-    cursor: pointer; /* 添加手型光标 */
-}
