@@ -47,9 +47,13 @@
     </div>
 <!--new! price slider-->
     <div class="price-slider">
-        <label for="priceRange">Price range:</label>
-        <input type="range" id="priceRange" min="0" max="100" value="50" class="slider">
-        <span id="priceRangeValue">$0 - $50</span>
+        <div class="min-price">Min price: 0</div>
+        <div class="max-price">Max price: 90</div>
+        <label for="minPrice">Min price:</label>
+        <input type="range" id="minPrice" class="slider" min="0" max="100" value="10" >
+        <label for="maxPrice">Max price:</label>
+        <input type="range" id="maxPrice" class="slider" min="0" max="100" value="90" >
+        <span id="priceRangeValue">$10 - $90</span>
     </div>
 
     <div id="productList" class="product-list">
