@@ -1,0 +1,159 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+nav {
+    background-color: #444;
+    padding: 10px;
+    text-align: center;
+}
+
+nav button {
+    margin: 0 10px;
+    padding: 5px 10px;
+    background-color: #555;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.section {
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+select, input, button {
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.font-change-btn {
+    font-size: 20px;
+}
+
+.search-bar {
+    margin-bottom: 20px;
+}
+
+.price-slider {
+    margin-bottom: 20px;
+}
+
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.stepper-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.stepper-item {
+    flex: 1;
+    text-align: center;
+    color: #555;
+}
+
+.stepper-item.completed {
+    color: #333;
+}
+
+.form-container {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #eee;
+    display: none;
+}
+
+footer {
+    background-color: #444;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.signature {
+    list-style: none;
+    padding: 0;
+}
+
+.signature li {
+    display: inline;
+    margin-right: 10px;
+}
+
+.signature a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.tab {
+    padding: 10px 16px;
+    list-style: none;
+    background-color: #eee;
+}
+
+.tab li {
+    display: inline;
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.tab li+li:before {
+    padding: 8px;
+    color: black;
+    content: "/\00a0";
+}
+
+.tab li a {
+    color: #0275d8;
+    text-decoration: none;
+}
+
+.tab li a:hover {
+    color: #01447e;
+    text-decoration: underline;
+}
+
+/* 透明按钮样式 */
+.transparent-button {
+    background-color: transparent;
+    border: 1px solid transparent;
+    color: #000; /* 设置文字颜色，以确保在透明背景上可见 */
+    cursor: pointer; /* 添加手型光标，使按钮看起来可点击 */
+}
+
+/* 为了应用透明样式，给每个按钮添加 transparent-button 类 */
+#user-button,
+#products-button,
+#cart-button {
+    /* 如果按钮的样式已在其他地方定义，请确保这里的样式会覆盖之前的样式 */
+    /* 比如，如果之前已经定义了 background-color，border，color 等样式，这里需要进行覆盖或调整 */
+    background-color: transparent !important;
+    border: 1px solid transparent !important;
+    color: #000 !important;
+}
+
+/* 如果需要将链接按钮也设置为透明，可以添加类似的样式 */
+.transparent-link {
+    background-color: transparent;
+    border: none;
+    color: #000; /* 设置链接文字颜色 */
+    text-decoration: underline; /* 添加下划线，使链接看起来可点击 */
+    cursor: pointer; /* 添加手型光标 */
+}
